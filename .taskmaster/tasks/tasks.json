@@ -1,0 +1,1313 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Setup Project Repository and Development Environment",
+        "description": "Initialize the XBallet project with the specified tech stack including React 18, Next.js 15.5, TypeScript, Tailwind CSS v4, and Korean font configuration",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "details": "Create Next.js 15.5 project with TypeScript template. Install and configure: Tailwind CSS v4, Shadcn/ui components using Shadcn UI MCP for component setup, Lucide React icons, Framer Motion, Zustand state management, Noto Sans KR font. Setup project structure with atomic design patterns. Configure ESLint, Prettier, and development scripts. Initialize Git repository with proper .gitignore for Next.js projects.",
+        "testStrategy": "Verify successful project initialization, all dependencies installed correctly, development server runs without errors, and Korean font renders properly in browser",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Next.js 15.5 Project with TypeScript",
+            "description": "Create a new Next.js 15.5 project using the TypeScript template to ensure type safety and compatibility with the required tech stack.",
+            "status": "done",
+            "dependencies": [],
+            "details": "Run the create-next-app CLI with the --typescript flag to bootstrap the project using Next.js 15.5. Confirm that the initial project structure and tsconfig.json are generated with the latest Next.js features.",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Install and Configure Tailwind CSS v4",
+            "description": "Set up Tailwind CSS v4 for utility-first styling and ensure it integrates with the Next.js 15.5 and TypeScript setup.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Install Tailwind CSS v4 and its peer dependencies. Generate tailwind.config.js and postcss.config.js. Configure Tailwind to scan the appropriate directories for class usage and ensure compatibility with Next.js 15.5.",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Integrate Shadcn/ui Components using Shadcn UI MCP",
+            "description": "Set up Shadcn/ui component library using Shadcn UI MCP for streamlined component setup and management.",
+            "status": "done",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Install and configure Shadcn UI MCP for automated component setup. Use MCP to initialize the shadcn/ui configuration and install base components. Verify MCP integration works properly with Next.js 15.5 and TypeScript.",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Install Lucide React Icons",
+            "description": "Add Lucide React icon set for consistent iconography throughout the application.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Install lucide-react package and verify compatibility with Next.js 15.5 and TypeScript. Create example usage to confirm proper integration.",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Install and Configure Framer Motion and Zustand",
+            "description": "Set up Framer Motion for animations and Zustand for state management within the Next.js 15.5 project.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Install framer-motion and zustand packages. Verify compatibility with Next.js 15.5 and React 18. Add example usage in a sample component to verify integration and TypeScript support.",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Configure Noto Sans KR Korean Font",
+            "description": "Integrate the Noto Sans KR font for proper Korean text rendering throughout the application.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Add Noto Sans KR via npm or CDN. Update global styles and Tailwind config to use the font as the default sans-serif. Verify font rendering in the browser with Next.js 15.5.",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Establish Atomic Design Project Structure",
+            "description": "Organize the project folders and files according to atomic design principles for scalable and maintainable UI development.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Create directories for atoms, molecules, organisms, templates, and pages. Move or create example components in each layer to demonstrate structure. Ensure compatibility with Next.js 15.5 app directory structure.",
+            "testStrategy": ""
+          },
+          {
+            "id": 8,
+            "title": "Configure ESLint, Prettier, and Development Scripts",
+            "description": "Set up ESLint and Prettier for code quality and formatting, and add useful development scripts to package.json.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Install ESLint and Prettier with recommended configs for Next.js 15.5 and TypeScript. Add lint, format, and dev scripts to package.json. Verify linting and formatting work as expected with the latest Next.js version.",
+            "testStrategy": ""
+          },
+          {
+            "id": 9,
+            "title": "Initialize Git Repository and .gitignore",
+            "description": "Set up version control with Git and configure .gitignore for a Next.js project.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Initialize a Git repository in the project root. Add a .gitignore file tailored for Next.js 15.5, Node, and TypeScript projects. Make the initial commit.",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Implement Korean UI Foundation and Design System",
+        "description": "Create the core UI foundation with 100% Korean interface, ballet-inspired design palette, and responsive mobile-first layout",
+        "details": "Setup Noto Sans KR font integration with proper Korean typography. Create design tokens for ballet-inspired color palette, 8px grid system, and spacing utilities. Implement responsive breakpoints for mobile devices. Create base components using Shadcn/ui with Korean text support. Setup theme provider with light/dark mode support. Implement proper Korean text rendering and line-height adjustments.",
+        "testStrategy": "Test Korean text rendering across different devices, verify responsive design on various screen sizes, validate color contrast ratios meet WCAG 2.1 AA standards",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Integrate Noto Sans KR Font",
+            "description": "Set up Noto Sans KR font for the UI, ensuring proper loading, fallback, and licensing for Korean text rendering.",
+            "dependencies": [],
+            "details": "Configure font loading in the project, verify compatibility with major browsers and devices, and ensure the font is applied globally to all UI elements.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Configure Korean Typography Settings",
+            "description": "Establish Korean-specific typography rules including line-height, letter-spacing, and text orientation for optimal readability.",
+            "dependencies": [],
+            "details": "Define and implement typographic scale, adjust line-height for Hangul, and ensure accessibility and WCAG compliance for Korean text.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Create Ballet-Inspired Design Tokens",
+            "description": "Develop design tokens for color palette, spacing, and grid system inspired by ballet aesthetics.",
+            "dependencies": [],
+            "details": "Define color variables, spacing units (8px grid), and grid structure; document tokens for use in components and theming.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Implement Responsive Breakpoints",
+            "description": "Set up responsive breakpoints to ensure mobile-first layout and optimal display across devices.",
+            "dependencies": [],
+            "details": "Define breakpoint values, update CSS/JS frameworks, and test layouts on various screen sizes for consistency.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Develop Base Components with Korean Text Support",
+            "description": "Build foundational UI components using Shadcn/ui, ensuring full Korean language support and ballet-inspired styling.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Create and document components (buttons, inputs, cards) with Korean text, validate accessibility, and apply design tokens.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Setup Theme Provider with Light/Dark Mode",
+            "description": "Implement a theme provider to support light and dark modes, applying ballet-inspired palettes and Korean typography.",
+            "dependencies": [],
+            "details": "Configure theme switching logic, ensure color contrast meets WCAG standards, and test Korean text rendering in both modes.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Adjust Korean Text Rendering and Line-Height",
+            "description": "Fine-tune Korean text rendering and line-height for clarity and accessibility across all UI components.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Test and optimize Hangul display, adjust line-height and spacing, and validate results on multiple devices and themes.",
+            "status": "done",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Setup Backend Infrastructure with Node.js and PostgreSQL",
+        "description": "Initialize backend services with Node.js, Express.js, PostgreSQL database, and Redis for caching",
+        "details": "Setup Node.js Express server with TypeScript. Configure PostgreSQL database with connection pooling. Setup Redis for session management and caching. Create database schema for users, classes, movements, subscriptions, and progress tracking. Implement database migrations and seeders. Setup environment configuration for development, staging, and production. Configure CORS for mobile web app access.",
+        "testStrategy": "Verify database connections, test CRUD operations, validate schema constraints, and confirm Redis caching functionality",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "cancelled",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Node.js Project with TypeScript and Express",
+            "description": "Set up the project directory, initialize Node.js, and install Express.js, TypeScript, and related dependencies. Configure TypeScript for the project.",
+            "dependencies": [],
+            "details": "Create project folder, run npm init, install express, typescript, ts-node, and @types/express. Generate and configure tsconfig.json for ESNext modules and strict type checking.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Configure PostgreSQL Database with Connection Pooling",
+            "description": "Install PostgreSQL client libraries, set up database connection pooling, and verify connectivity from the Node.js backend.",
+            "dependencies": [
+              "3.1"
+            ],
+            "details": "Install pg and pg-pool packages. Create a database connection module in TypeScript. Test connection pooling and error handling.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Setup Redis for Session Management and Caching",
+            "description": "Install Redis client, configure connection, and implement basic caching and session management logic.",
+            "dependencies": [
+              "3.1"
+            ],
+            "details": "Install ioredis or redis npm package. Create Redis connection module. Integrate Redis for session storage and caching middleware in Express.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Design Database Schema for Core Entities",
+            "description": "Define and document the database schema for users, classes, movements, subscriptions, and progress tracking.",
+            "dependencies": [
+              "3.2"
+            ],
+            "details": "Create ER diagrams and SQL schema files. Specify table relationships, indexes, and constraints for all entities.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Implement Database Migrations and Seeders",
+            "description": "Set up migration and seeding tools to manage schema changes and populate initial data.",
+            "dependencies": [
+              "3.4"
+            ],
+            "details": "Install and configure migration tools (e.g., TypeORM, Sequelize, or Knex). Write migration scripts for schema creation and seeders for test data.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Setup Environment Configuration for Multiple Stages",
+            "description": "Configure environment variables and settings for development, staging, and production environments.",
+            "dependencies": [
+              "3.1"
+            ],
+            "details": "Create .env files for each environment. Implement config loader in TypeScript. Ensure sensitive data is managed securely.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Configure CORS for Mobile Web App Access",
+            "description": "Set up CORS middleware in Express to allow secure cross-origin requests from mobile web clients.",
+            "dependencies": [
+              "3.1"
+            ],
+            "details": "Install and configure cors npm package. Define allowed origins, methods, and headers for mobile app integration.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 8,
+            "title": "Scaffold CRUD Operations for Core Entities",
+            "description": "Implement basic Create, Read, Update, and Delete endpoints for users, classes, movements, subscriptions, and progress tracking.",
+            "dependencies": [
+              "3.4",
+              "3.5"
+            ],
+            "details": "Create Express route handlers and controllers for each entity. Ensure TypeScript types and validation are enforced. Test endpoints with sample data.",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Implement User Authentication and Account Management",
+        "description": "Create frontend user authentication UI with dummy data and mock authentication flows for demo purposes",
+        "status": "done",
+        "dependencies": [
+          2
+        ],
+        "priority": "high",
+        "details": "Implement frontend-only authentication system using Zustand for state management. Create Korean mobile-optimized login and registration forms with mock data. Build user profile management with skill level selection (초급/중급/고급). Implement mock authentication flows for demo purposes without backend integration. Create protected route components and authentication state persistence. Add form validation with Korean error messages.",
+        "testStrategy": "Test form validation with various inputs, verify state management across components, test navigation flows between authenticated and unauthenticated states, and validate Korean UI text rendering",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Setup Zustand Authentication State Management",
+            "description": "Create Zustand store for managing user authentication state, user profile data, and session persistence using localStorage. Implement mock user data and authentication actions for demo purposes.",
+            "status": "done",
+            "dependencies": [],
+            "details": "Setup authentication store with login, logout, register actions. Create mock user profiles with different skill levels. Implement state persistence and hydration. Add authentication status checks and user profile management.",
+            "testStrategy": "Test state persistence across browser sessions, verify mock authentication flows, and validate state updates"
+          },
+          {
+            "id": 2,
+            "title": "Create Korean Mobile-Optimized Authentication Forms",
+            "description": "Build responsive login and registration forms with Korean UI text, validation messages, and mobile-first design. Implement form validation and error handling with localized messages.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Create login form with email/password fields. Build registration form with email, password, name, and skill level selection. Add Korean validation messages and error states. Implement mobile-optimized form layouts and touch-friendly inputs.",
+            "testStrategy": "Test form validation with various input scenarios, verify Korean text rendering, and validate mobile responsiveness"
+          },
+          {
+            "id": 3,
+            "title": "Implement Protected Routes and Navigation Guards",
+            "description": "Create route protection components and navigation guards that work with the mock authentication state. Implement automatic redirects and authentication-based UI rendering.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Build ProtectedRoute component that checks authentication state. Create navigation guards for authenticated/unauthenticated users. Implement automatic redirects to login page. Add conditional rendering based on auth status.",
+            "testStrategy": "Test route protection with different authentication states, verify redirect functionality, and validate navigation flow"
+          },
+          {
+            "id": 4,
+            "title": "Build User Profile Management Interface",
+            "description": "Create user profile management UI with skill level selection, profile editing, and mock data updates. Include Korean localization for all profile-related text and options.",
+            "status": "done",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Build profile view and edit forms. Implement skill level selection (초급/중급/고급) with Korean labels. Create profile update functionality with mock data persistence. Add user avatar placeholder and profile information display.",
+            "testStrategy": "Test profile editing functionality, verify skill level selection, and validate Korean text display"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Create User Onboarding Flow with Skill Assessment",
+        "description": "Build the complete Korean onboarding experience with skill level assessment and preference selection using frontend implementation with dummy data for demo purposes",
+        "status": "done",
+        "dependencies": [
+          4
+        ],
+        "priority": "medium",
+        "details": "Create welcome screen with app introduction in Korean. Implement skill level assessment form (초급/중급/고급) with interactive questions. Build goal setting interface (피트니스, 기초 학습, 실력 향상). Create preference selection for focus areas (바워크, 센터워크, 점프, 턴, 포인트) and music styles (클래식, 현대, 팝, 재즈). Implement progress stepper component. Store user preferences using Zustand state management with mock data for demo purposes. Create onboarding completion flow leading to first class generation simulation.",
+        "testStrategy": "Test complete onboarding flow with mock data, validate Zustand state management, verify Korean text display, confirm smooth navigation between steps, and ensure demo functionality works without backend dependencies",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design and Implement Korean Welcome Screen",
+            "description": "Create a visually engaging welcome screen with an app introduction in Korean, ensuring localization and motivational messaging.",
+            "status": "done",
+            "dependencies": [],
+            "details": "The screen should introduce the app's core value, use bold typography, and set the tone for the onboarding journey. Ensure all text is in Korean and visually accessible.",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Develop Interactive Skill Level Assessment Form",
+            "description": "Build a form to assess user skill level (초급/중급/고급) using interactive questions and clear UI elements.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Include interactive elements (e.g., multiple choice, sliders) to determine the user's current skill level. Ensure the form is intuitive and fully localized in Korean.",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Create Goal Setting Interface",
+            "description": "Implement a UI for users to select their primary goals (피트니스, 기초 학습, 실력 향상) as part of onboarding.",
+            "status": "done",
+            "dependencies": [
+              2
+            ],
+            "details": "Allow users to choose one or more goals, with clear descriptions and motivational prompts in Korean. Use engaging visuals to enhance selection.",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Build Preference Selection for Focus Areas and Music Styles",
+            "description": "Enable users to select preferred focus areas (바워크, 센터워크, 점프, 턴, 포인트) and music styles (클래식, 현대, 팝, 재즈).",
+            "status": "done",
+            "dependencies": [
+              3
+            ],
+            "details": "Design an interactive selection UI for both focus areas and music genres, supporting multi-select and clear feedback. All options and instructions must be in Korean.",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Implement Progress Stepper Component",
+            "description": "Add a progress stepper to visually indicate the user's current step and remaining steps in the onboarding flow.",
+            "status": "done",
+            "dependencies": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "details": "Ensure the stepper updates dynamically as users advance, is visually consistent, and supports right-to-left Korean text where needed.",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Setup Zustand Store for Mock User Preferences",
+            "description": "Create Zustand state management store to handle user preferences and assessment results with dummy data for demo purposes.",
+            "status": "done",
+            "dependencies": [
+              4
+            ],
+            "details": "Setup Zustand store with actions to save skill level, goals, focus areas, and music preferences. Implement mock data persistence that simulates backend storage for demo functionality. Include state validation and error handling.",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Create Onboarding Completion Flow with Demo Class Generation",
+            "description": "Design the final onboarding step that confirms completion and simulates the generation of the user's first class using mock data.",
+            "status": "done",
+            "dependencies": [
+              5,
+              6
+            ],
+            "details": "Show a confirmation message in Korean, summarize user selections from Zustand store, and simulate personalized first class generation with dummy class data. Ensure smooth transition to the main app experience using mock content.",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Setup Video Storage and CDN Infrastructure",
+        "description": "Configure AWS S3 storage and CloudFront CDN for high-quality vertical ballet movement videos",
+        "details": "Setup AWS S3 buckets for video storage with proper access policies. Configure CloudFront CDN for global video delivery with Korean region optimization. Implement video upload pipeline with automatic transcoding to multiple bitrates. Setup video metadata storage in PostgreSQL. Create video serving API with adaptive bitrate streaming. Implement video compression for mobile optimization while maintaining 1080p quality. Configure proper CORS headers for video access.",
+        "testStrategy": "Test video upload and transcoding pipeline, verify CDN delivery speeds, validate adaptive bitrate streaming, and confirm mobile video playback quality",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Configure AWS S3 Buckets for Video Storage",
+            "description": "Set up AWS S3 buckets to store high-quality vertical ballet movement videos, applying appropriate access policies, storage class selection, and lifecycle management for cost and performance optimization.",
+            "dependencies": [],
+            "details": "Create S3 buckets in the optimal region for Korean users, configure bucket policies to restrict public access, enable versioning, and apply lifecycle rules for automatic data management. Ensure S3 Transfer Acceleration is considered for large video uploads and select the appropriate storage class (e.g., S3 Standard or Intelligent-Tiering) for video content.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Set Up CloudFront CDN for Global Video Delivery",
+            "description": "Deploy and configure an AWS CloudFront distribution to serve videos from S3 globally, with specific optimization for low latency in the Korean region.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "Create a CloudFront distribution with the S3 bucket as the origin, configure origin access identity for secure access, set cache behaviors for video content, and optimize distribution settings for Korean viewers. Implement CORS headers and custom error responses as needed.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Implement Video Upload Pipeline with Transcoding and Compression",
+            "description": "Develop a video upload pipeline that automatically transcodes uploaded videos to multiple bitrates and compresses them for mobile optimization while maintaining 1080p quality.",
+            "dependencies": [
+              "6.1",
+              "6.2"
+            ],
+            "details": "Integrate AWS services (e.g., Lambda, Elastic Transcoder, or MediaConvert) to process uploaded videos, generate adaptive bitrate streams, and apply compression settings for mobile devices. Store video metadata in PostgreSQL and ensure the pipeline supports efficient uploads and processing.",
+            "status": "done",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Develop Ballet Movement Video Database",
+        "description": "Create frontend video database with dummy data for demo purposes, implementing video schema, metadata management UI, search functionality, and video categorization with Korean metadata for ballet movements",
+        "status": "in-progress",
+        "dependencies": [
+          6
+        ],
+        "priority": "medium",
+        "details": "Design movement video schema with Korean names, descriptions, difficulty levels, and categorization (바워크, 센터워크, 점프, 턴, 포인트). Create metadata management UI for demo purposes. Implement video search functionality with Korean text search. Setup video categorization system with dummy data. Create video preview components and thumbnail display. Focus on frontend implementation with mock data for demonstration rather than full video upload and encoding pipeline.",
+        "testStrategy": "Verify video metadata display accuracy, test search functionality with Korean terms, validate video categorization interface, and confirm proper Korean text rendering in UI components",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Ballet Movement Video Schema with Dummy Data",
+            "description": "Define the frontend data structure for ballet movement videos with Korean metadata and create dummy data for demo purposes.",
+            "status": "done",
+            "dependencies": [],
+            "details": "Create TypeScript interfaces for video metadata including Korean names, descriptions, difficulty levels, and categorization (바워크, 센터워크, 점프, 턴, 포인트). Generate 20-30 dummy video entries with realistic Korean metadata for demonstration.",
+            "testStrategy": "Verify schema supports all required fields and dummy data renders correctly"
+          },
+          {
+            "id": 2,
+            "title": "Develop Metadata Management UI Components",
+            "description": "Create React components for displaying and managing video metadata with Korean text support.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Build video card components, metadata display panels, and category filters using Shadcn/ui. Ensure proper Korean text rendering with Noto Sans KR font. Include responsive design for mobile devices.",
+            "testStrategy": "Test Korean text display, responsive layout, and component interactions"
+          },
+          {
+            "id": 3,
+            "title": "Implement Video Gallery and Preview System",
+            "description": "Create video gallery interface with thumbnail previews and video player integration for demo videos.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Build video grid layout, thumbnail display components, and video player modal. Use placeholder videos or sample ballet movement clips for demonstration. Implement 9:16 aspect ratio display.",
+            "testStrategy": "Verify video gallery layout, thumbnail loading, and player functionality"
+          },
+          {
+            "id": 4,
+            "title": "Create Video Categorization Interface",
+            "description": "Develop UI components for browsing videos by ballet movement categories with Korean labels.",
+            "status": "done",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Build category navigation, filtering controls, and category-specific video listings. Implement tabs or sidebar navigation for 바워크, 센터워크, 점프, 턴, 포인트 categories.\n<info added on 2025-09-21T07:30:12.609Z>\nProgress Update: Successfully implemented video categorization interface improvements:\n\n1. ✅ Fixed video grid layout - changed from 3 columns to 2 columns for better mobile experience\n2. ✅ Improved card formatting with better spacing and responsive design\n3. ✅ Enhanced video player modal with mobile-optimized layout and proper 9:16 aspect ratio\n4. ✅ Removed download button for mobile optimization\n5. ✅ Converted all content to Korean:\n   - Video titles now display titleKorean instead of title\n   - Descriptions now display descriptionKorean instead of description  \n   - Categories now display Korean names (바워크, 센터워크, 점프, 턴, 포인트, etc.)\n   - Added getCategoryKorean() helper function for category mapping\n6. ✅ Updated modal to show Korean content and related movements\n7. ✅ Improved overall mobile-first design and user experience\n\nThe video categorization interface is now fully functional with proper Korean localization and mobile-optimized design.\n</info added on 2025-09-21T07:30:12.609Z>",
+            "testStrategy": "Test category filtering, navigation between categories, and Korean label display"
+          },
+          {
+            "id": 5,
+            "title": "Implement Korean Text Search Functionality",
+            "description": "Create search interface with Korean text input and filtering capabilities for video discovery.",
+            "status": "deferred",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Build search input component with Korean IME support, implement client-side search filtering, and create search results display. Include autocomplete suggestions and search history.",
+            "testStrategy": "Test Korean text input, search filtering accuracy, and results display"
+          },
+          {
+            "id": 6,
+            "title": "Setup Video Tagging System for Demo",
+            "description": "Create tagging interface and dummy tag data for ballet movements to support future AI class generation.",
+            "status": "pending",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Design tag display components, create dummy tag data for movements, and implement tag-based filtering. Include visual indicators for movement difficulty and type.",
+            "testStrategy": "Verify tag display, filtering by tags, and tag management interface"
+          },
+          {
+            "id": 7,
+            "title": "Create Video Database Dashboard",
+            "description": "Build admin-style dashboard for viewing and managing the video database with statistics and overview.",
+            "status": "pending",
+            "dependencies": [
+              2,
+              4,
+              5
+            ],
+            "details": "Create dashboard layout with video statistics, category distribution charts, and quick access to management functions. Include Korean localization for all dashboard elements.",
+            "testStrategy": "Test dashboard functionality, statistics accuracy, and Korean text localization"
+          },
+          {
+            "id": 8,
+            "title": "Integrate Video Database with Main Application",
+            "description": "Connect the video database components with the main XBallet application navigation and state management.",
+            "status": "pending",
+            "dependencies": [
+              3,
+              4,
+              5,
+              7
+            ],
+            "details": "Integrate video database pages with Next.js routing, connect with Zustand state management, and ensure proper navigation flow from main app to video database sections.",
+            "testStrategy": "Test navigation integration, state management, and overall user flow"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Implement AI Class Generation Algorithm",
+        "description": "Build the core AI system that generates personalized ballet classes by combining movement videos based on user preferences",
+        "details": "Create AI algorithm using Python/TensorFlow for intelligent movement sequencing. Implement user preference analysis system considering skill level, focus areas, and duration (5, 10, 15, 30, 60, 90 minutes). Build movement compatibility matrix for smooth transitions. Create class structure templates (warm-up, main content, cool-down). Implement real-time class generation API (<30 seconds). Add class difficulty balancing and progression logic. Store generated classes for user history and favorites.",
+        "testStrategy": "Test class generation speed and quality, validate movement sequencing logic, verify duration accuracy, and confirm personalization effectiveness across different user profiles",
+        "priority": "high",
+        "dependencies": [
+          7
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Develop User Preference Analysis Module",
+            "description": "Implement a system to analyze user preferences, including skill level, focus areas, and desired class duration, to inform personalized ballet class generation.",
+            "dependencies": [],
+            "details": "Design data structures and algorithms to capture and interpret user input. Integrate logic to map user preferences to movement selection and class structure parameters. Ensure compatibility with downstream sequencing and generation modules.\n<info added on 2025-09-21T07:33:03.425Z>\nProgress Update: Successfully enhanced the AI class generation functionality with significant improvements:\n\n1. ✅ Enhanced Personalization Options:\n   - Added music style selection (클래식, 현대, 팝, 재즈, 발라드)\n   - Added workout intensity selection (부드러운, 보통, 강한)\n   - Improved UI with icons for each selection category\n   - Better visual organization with 2-column grid layout\n\n2. ✅ Improved Generation Experience:\n   - Added realistic progress tracking with step-by-step messages\n   - Implemented progress bar with smooth animations\n   - Added detailed generation steps: preference analysis, movement sequencing, difficulty adjustment, music matching, optimization\n   - Enhanced visual feedback during generation process\n\n3. ✅ Enhanced Class Display:\n   - Added class structure breakdown (워밍업, 메인, 쿨다운) with time allocation\n   - Improved favorite functionality with proper state management\n   - Better visual hierarchy with colored structure indicators\n   - Enhanced class information display\n\n4. ✅ Better User Experience:\n   - Improved button styling and interactions\n   - Added proper loading states and animations\n   - Enhanced visual feedback for all interactions\n   - Better mobile-responsive design\n\nThe AI class generation system now provides a much more sophisticated and user-friendly experience with comprehensive personalization options and detailed progress tracking.\n</info added on 2025-09-21T07:33:03.425Z>",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Build Intelligent Movement Sequencing and Compatibility Engine",
+            "description": "Create the core AI algorithm using Python/TensorFlow that sequences ballet movements into smooth, logical classes, leveraging a movement compatibility matrix for transitions.",
+            "dependencies": [
+              "8.1"
+            ],
+            "details": "Develop or adapt a neural network or rule-based system to select and order movement videos based on user profile and compatibility constraints. Construct and utilize a movement compatibility matrix to ensure seamless transitions. Implement class structure templates (warm-up, main content, cool-down) and integrate difficulty balancing and progression logic.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Implement Real-Time Class Generation API and Storage",
+            "description": "Develop an API that generates personalized ballet classes in under 30 seconds and stores generated classes for user history and favorites.",
+            "dependencies": [
+              "8.2"
+            ],
+            "details": "Design and implement an efficient API endpoint for real-time class generation. Optimize for speed and scalability. Integrate persistent storage to save generated classes, enabling retrieval for user history and favorites. Ensure API returns complete class metadata and video sequencing.",
+            "status": "done",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Build Korean TTS Voice Coaching System",
+        "description": "Implement AI-powered Korean voice coaching with real-time guidance and movement pronunciation",
+        "details": "Integrate Korean TTS service for movement narration and coaching. Create voice coaching script templates with proper Korean ballet terminology pronunciation. Implement real-time audio synthesis for dynamic feedback. Build adjustable coaching intensity levels (beginner-friendly to advanced). Create encouragement and motivation message system in Korean. Implement offline voice synthesis capability. Setup audio quality optimization for mobile devices.",
+        "testStrategy": "Test Korean pronunciation accuracy, verify audio quality across devices, validate coaching message appropriateness, and confirm offline functionality",
+        "priority": "medium",
+        "dependencies": [
+          8
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Integrate Korean TTS Service for Movement Narration",
+            "description": "Select and integrate a high-quality Korean TTS engine capable of real-time synthesis, ensuring accurate pronunciation of ballet terminology and support for dynamic movement narration.",
+            "dependencies": [],
+            "details": "Evaluate TTS providers for Korean language support, API capabilities, and real-time synthesis performance. Implement API integration and test with sample ballet movement scripts.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Create Voice Coaching Script Templates with Proper Pronunciation",
+            "description": "Develop reusable script templates for movement guidance and coaching, ensuring correct use of Korean ballet terminology and phonetic accuracy.",
+            "dependencies": [
+              "9.1"
+            ],
+            "details": "Collaborate with Korean language and ballet experts to draft scripts. Validate pronunciation using TTS output and adjust scripts for clarity and naturalness.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Implement Real-Time Audio Synthesis for Dynamic Feedback",
+            "description": "Enable the system to generate and play Korean voice feedback in real time based on user actions and movement data.",
+            "dependencies": [
+              "9.1",
+              "9.2"
+            ],
+            "details": "Design event-driven architecture to trigger TTS synthesis on movement events. Optimize latency and ensure seamless audio playback during coaching sessions.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Build Adjustable Coaching Intensity Levels",
+            "description": "Develop logic for varying coaching detail and tone, supporting beginner to advanced users with appropriate language, pacing, and encouragement.",
+            "dependencies": [
+              "9.2",
+              "9.3"
+            ],
+            "details": "Define coaching levels and corresponding script variations. Implement UI controls for intensity selection and dynamically adjust TTS output accordingly.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Create Encouragement and Motivation Message System in Korean",
+            "description": "Design and implement a system to deliver context-aware encouragement and motivational messages in natural Korean during coaching sessions.",
+            "dependencies": [
+              "9.2",
+              "9.4"
+            ],
+            "details": "Curate a library of motivational phrases with proper honorifics and emotional tone. Integrate with real-time feedback logic to trigger messages based on user performance.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Implement Offline Voice Synthesis Capability",
+            "description": "Enable the TTS system to function without internet connectivity, ensuring uninterrupted voice coaching for mobile users.",
+            "dependencies": [
+              "9.1",
+              "9.3",
+              "9.4",
+              "9.5"
+            ],
+            "details": "Evaluate and integrate offline-capable TTS engines or pre-generate key audio assets. Ensure fallback mechanisms and test offline scenarios on target devices.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Setup Audio Quality Optimization for Mobile Devices",
+            "description": "Optimize synthesized audio for clarity, latency, and performance on a range of mobile hardware, ensuring consistent user experience.",
+            "dependencies": [
+              "9.3",
+              "9.4",
+              "9.5",
+              "9.6"
+            ],
+            "details": "Implement audio compression, buffering, and device-specific tuning. Test audio playback across popular mobile devices and adjust parameters for best results.",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Create Class Playback and Video Player Interface",
+        "description": "Build the main class experience interface with seamless video playback, music synchronization, and coaching integration",
+        "details": "Create custom video player optimized for vertical 9:16 format. Implement seamless transitions between movement videos. Build music synchronization engine for background audio. Integrate voice coaching audio overlay. Create playback controls (play, pause, skip, replay). Implement progress tracking during class playback. Add class preview functionality. Setup adaptive video quality based on connection speed. Create offline video download and playback capability.",
+        "testStrategy": "Test video playback smoothness, verify music synchronization accuracy, validate voice coaching integration, and confirm offline playback functionality",
+        "priority": "high",
+        "dependencies": [
+          9
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design and Implement Custom Vertical Video Player",
+            "description": "Create a custom video player UI optimized for 9:16 vertical format, ensuring responsive layout and interactive controls.",
+            "dependencies": [],
+            "details": "Include support for vertical orientation, responsive resizing, and integration of branding elements. Ensure compatibility with both iOS and Android platforms.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Develop Seamless Video Transition Logic",
+            "description": "Implement logic for smooth, uninterrupted transitions between movement videos during class playback.",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "Ensure transitions are visually seamless and do not cause playback stutter or delay. Support preloading of next video segments.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Build Music Synchronization Engine",
+            "description": "Create an engine to synchronize background music with video playback, supporting tempo and cue alignment.",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "Allow for dynamic adjustment of music timing to match video segments and transitions. Support multiple music tracks per class.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Integrate Voice Coaching Audio Overlay",
+            "description": "Overlay voice coaching audio tracks on top of video and music, ensuring clear and synchronized playback.",
+            "dependencies": [
+              "10.1",
+              "10.3"
+            ],
+            "details": "Support volume balancing between music and voice, and allow toggling of coaching audio on/off.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Implement Playback Controls",
+            "description": "Add interactive playback controls including play, pause, skip, and replay, optimized for mobile touch interfaces.",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "Ensure controls are accessible, can be shown/hidden, and support keyboard shortcuts for accessibility.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Develop Progress Tracking System",
+            "description": "Track and visually display user progress through the class, including current position and completed segments.",
+            "dependencies": [
+              "10.1",
+              "10.2"
+            ],
+            "details": "Integrate with analytics and support real-time updates as the user advances through the class.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Create Class Preview Functionality",
+            "description": "Enable users to preview class content, including video snippets and music samples, before starting playback.",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "Support preview mode with limited controls and clear indication that the user is not in full playback.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 8,
+            "title": "Implement Adaptive Video Quality",
+            "description": "Set up adaptive streaming to automatically adjust video quality based on user’s connection speed.",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "Support seamless quality switching without interrupting playback, and provide manual override option.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 9,
+            "title": "Enable Offline Video Download and Playback",
+            "description": "Allow users to download class videos for offline playback, with secure storage and playback controls.",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "Implement download management UI, handle storage limits, and ensure DRM or content protection as needed.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 10,
+            "title": "Add Comprehensive Error Handling and Recovery",
+            "description": "Implement robust error detection, user notifications, and recovery mechanisms for all playback scenarios.",
+            "dependencies": [
+              "10.1",
+              "10.2",
+              "10.3",
+              "10.4",
+              "10.5",
+              "10.6",
+              "10.7",
+              "10.8",
+              "10.9"
+            ],
+            "details": "Handle network errors, file corruption, unsupported formats, and provide user-friendly error messages with retry options.",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Implement Subscription and Payment System",
+        "description": "Build the freemium model with frontend subscription system and mock Korean payment integration for demo purposes",
+        "status": "done",
+        "dependencies": [
+          4
+        ],
+        "priority": "high",
+        "details": "Implement 3-minute free trial class limitation with frontend tracking. Create subscription plans UI (Monthly ₩19,900, Annual ₩199,000, Family ₩29,900) with Korean payment forms using dummy data. Build subscription management dashboard with mock payment integration. Implement free trial conversion tracking with demo flows. Create cancellation and refund handling interface with mock responses. Setup subscription renewal automation UI. Add family sharing functionality interface for up to 4 users. Implement payment forms with Korean payment method selection and mock processing.",
+        "testStrategy": "Test subscription plan UI components, verify payment form validation with Korean inputs, validate subscription management interface functionality, and confirm mock payment processing flows work correctly",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Subscription Plans UI and Freemium Model Frontend",
+            "description": "Design and implement subscription plans selection interface with Korean pricing display. Create frontend logic to track and enforce 3-minute free trial class limitation. Build subscription tier comparison components with clear feature differentiation between free and paid plans.",
+            "status": "done",
+            "dependencies": [],
+            "details": "Build responsive subscription plans cards, implement trial usage tracking in frontend state, create upgrade prompts and conversion flows, and design Korean-optimized pricing display components.",
+            "testStrategy": "Test subscription plan selection UI, verify trial limitation enforcement, and validate Korean pricing display across devices"
+          },
+          {
+            "id": 2,
+            "title": "Implement Mock Korean Payment Forms and Processing",
+            "description": "Create Korean payment method selection forms with card payment (카드 결제) options using dummy data. Implement mock payment processing flows that simulate successful transactions, payment failures, and various Korean payment scenarios for demo purposes.",
+            "status": "done",
+            "dependencies": [
+              1
+            ],
+            "details": "Build Korean card payment forms with proper validation, create mock payment gateway responses, implement payment success/failure UI flows, and add Korean payment method icons and labels.",
+            "testStrategy": "Test payment form validation with Korean inputs, verify mock payment processing scenarios, and confirm error handling displays correctly"
+          },
+          {
+            "id": 3,
+            "title": "Build Subscription Management Dashboard with Mock Data",
+            "description": "Develop user-facing subscription management interface showing current plan, billing history with dummy data, and payment method management. Create family sharing management UI allowing up to 4 users per family plan with mock member invitation flows.",
+            "status": "done",
+            "dependencies": [
+              2
+            ],
+            "details": "Design subscription dashboard layout, implement billing history display with mock Korean transaction data, create family member management interface, and build subscription cancellation/modification flows with mock confirmations.",
+            "testStrategy": "Test subscription dashboard functionality, verify family sharing interface, and validate mock billing data display"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Build Ballet Movement Encyclopedia",
+        "description": "Create comprehensive searchable database of ballet movements with Korean descriptions and video demonstrations",
+        "details": "Implement Elasticsearch for Korean text search functionality. Create movement encyclopedia interface with categorization (바워크, 센터워크, 점프, 턴, 포인트). Build detailed movement pages with Korean descriptions, historical context, and common mistakes. Implement multi-angle video demonstrations. Create difficulty rating system. Add related movements suggestions. Build content management system for encyclopedia updates. Implement bookmark and favorite movements functionality.",
+        "testStrategy": "Test Korean search functionality, verify movement categorization accuracy, validate video demonstrations quality, and confirm content management system functionality",
+        "priority": "medium",
+        "dependencies": [
+          7
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design and Implement Ballet Movement Data Model and Search Functionality",
+            "description": "Define the data schema for ballet movements, including Korean descriptions, categorization (바워크, 센터워크, 점프, 턴, 포인트), historical context, difficulty ratings, and related movements. Integrate Elasticsearch to enable efficient Korean text search across all movement entries.",
+            "dependencies": [],
+            "details": "Ensure the data model supports multi-language fields, video references, and tagging for related movements. Configure Elasticsearch analyzers for Korean language processing and test search accuracy with sample data.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Develop Encyclopedia Interface and Detailed Movement Pages",
+            "description": "Create the user interface for browsing and searching ballet movements, including categorized lists and filters. Build detailed movement pages displaying Korean descriptions, historical context, common mistakes, multi-angle video demonstrations, difficulty ratings, and related movement suggestions.",
+            "dependencies": [
+              "12.1"
+            ],
+            "details": "Design responsive UI components for movement lists and detail pages. Integrate video player supporting multi-angle views. Implement logic for displaying related movements and user difficulty ratings.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Implement Content Management and User Interaction Features",
+            "description": "Build a content management system (CMS) for updating encyclopedia entries, uploading videos, and managing metadata. Add user features for bookmarking and favoriting movements, and ensure all updates are reflected in the search and interface.",
+            "dependencies": [
+              "12.2"
+            ],
+            "details": "Develop secure CMS access for editors. Implement user authentication for bookmarking/favoriting. Ensure CMS changes trigger search index updates and UI refreshes.",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "Develop Progress Tracking and Analytics System",
+        "description": "Create comprehensive user progress tracking with analytics dashboard and achievement system",
+        "details": "Implement class completion tracking with detailed analytics. Create skill level progression system with automated recommendations. Build weekly/monthly progress reports with Korean localization. Design achievement badges and milestone system. Create personal best records tracking. Implement progress sharing capabilities. Setup PostHog analytics integration for user behavior tracking. Create progress visualization charts and graphs. Build recommendation engine for next class suggestions based on progress.",
+        "testStrategy": "Test progress tracking accuracy, verify analytics data collection, validate achievement system functionality, and confirm recommendation engine effectiveness",
+        "priority": "medium",
+        "dependencies": [
+          10
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Class Completion Tracking",
+            "description": "Develop backend and frontend logic to track user completion status for each class, including timestamps and progress percentages.",
+            "dependencies": [],
+            "details": "Store completion data per user and class. Ensure real-time updates and historical tracking. Integrate with analytics dashboard for visualization.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Build Analytics Dashboard",
+            "description": "Design and implement a dashboard to visualize user progress, engagement, and key metrics using charts and graphs.",
+            "dependencies": [
+              "13.1"
+            ],
+            "details": "Include data aggregation, visualization, and customizable widgets. Display completion rates, activity trends, and drill-down capabilities for individual/group performance.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Develop Skill Level Progression Logic",
+            "description": "Create algorithms to assess and update user skill levels based on class completion, performance, and engagement.",
+            "dependencies": [
+              "13.1"
+            ],
+            "details": "Define skill levels and progression criteria. Automate skill advancement and integrate with recommendation engine for personalized suggestions.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Generate Weekly and Monthly Progress Reports with Korean Localization",
+            "description": "Automate generation of user progress reports on a weekly and monthly basis, ensuring all content is localized for Korean users.",
+            "dependencies": [
+              "13.1",
+              "13.2"
+            ],
+            "details": "Include summary statistics, visualizations, and achievement highlights. Support export and sharing options. Validate Korean language accuracy.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Design Achievement Badges and Milestone System",
+            "description": "Create logic and UI for awarding badges and tracking milestones based on user activity and progress.",
+            "dependencies": [
+              "13.1",
+              "13.3"
+            ],
+            "details": "Define badge criteria, design badge graphics, and implement milestone notifications. Display achievements in user profiles and analytics dashboard.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Implement Personal Best Records Tracking",
+            "description": "Track and display users' personal bests for key metrics such as fastest completion, highest scores, and longest streaks.",
+            "dependencies": [
+              "13.1",
+              "13.2"
+            ],
+            "details": "Store historical records and update when new personal bests are achieved. Visualize records in dashboard and reports.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Enable Progress Sharing Capabilities",
+            "description": "Allow users to share their progress, achievements, and reports with others via social media or direct links.",
+            "dependencies": [
+              "13.2",
+              "13.4",
+              "13.5",
+              "13.6"
+            ],
+            "details": "Implement secure sharing options, privacy controls, and Korean language support for shared content.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 8,
+            "title": "Setup PostHog Analytics Integration",
+            "description": "Integrate PostHog to collect and analyze user behavior data for deeper insights into engagement and feature usage.",
+            "dependencies": [
+              "13.2"
+            ],
+            "details": "Configure event tracking, funnel analysis, and custom dashboards. Ensure compliance with privacy regulations and Korean localization.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 9,
+            "title": "Build Recommendation Engine for Next Class Suggestions",
+            "description": "Develop an engine to suggest next classes based on user progress, skill level, and personal bests.",
+            "dependencies": [
+              "13.3",
+              "13.6",
+              "13.8"
+            ],
+            "details": "Use analytics data and progression logic to generate personalized recommendations. Integrate with dashboard and notification system.",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "Implement Mobile Optimization and Performance Features",
+        "description": "Optimize the application for mobile performance with 60fps animations and touch interactions",
+        "details": "Implement touch-optimized interactions for mobile devices. Optimize animations for 60fps performance using Framer Motion. Setup progressive web app (PWA) capabilities. Implement lazy loading for video content. Create mobile-specific navigation patterns. Optimize bundle size and implement code splitting. Setup service worker for offline functionality. Implement touch gestures for video controls. Optimize memory usage to stay under 100MB RAM. Create mobile-specific error handling and retry mechanisms.",
+        "testStrategy": "Test performance on various mobile devices, verify 60fps animation smoothness, validate touch interactions, and confirm offline functionality",
+        "priority": "medium",
+        "dependencies": [
+          10,
+          13
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Optimize Touch Interactions for Mobile Devices",
+            "description": "Implement and refine touch-optimized UI components and interactions to ensure smooth, intuitive user experiences on mobile devices.",
+            "dependencies": [],
+            "details": "Focus on responsive touch targets, gesture recognition, and minimizing input latency. Test across a range of mobile devices and OS versions.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Tune Animations for 60fps Performance",
+            "description": "Optimize all animations to consistently achieve 60 frames per second, leveraging Framer Motion and hardware acceleration.",
+            "dependencies": [],
+            "details": "Profile animation performance, reduce layout thrashing, and use GPU-accelerated transforms. Validate with performance monitoring tools.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Setup Progressive Web App (PWA) Capabilities",
+            "description": "Enable PWA features including manifest, installability, and mobile home screen support.",
+            "dependencies": [],
+            "details": "Configure web app manifest, icons, and ensure compliance with PWA best practices for mobile engagement.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Implement Lazy Loading for Video Content",
+            "description": "Defer loading of video assets until they are needed to reduce initial load time and bandwidth usage.",
+            "dependencies": [],
+            "details": "Use intersection observers or equivalent to trigger video loading. Test for smooth playback and minimal delay.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Create Mobile-Specific Navigation Patterns",
+            "description": "Design and implement navigation optimized for mobile, such as bottom navigation bars or swipe gestures.",
+            "dependencies": [],
+            "details": "Ensure navigation is accessible, intuitive, and consistent with mobile UX standards. Test for usability and responsiveness.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Optimize Bundle Size and Implement Code Splitting",
+            "description": "Reduce JavaScript bundle size and implement code splitting to improve load times and runtime performance on mobile.",
+            "dependencies": [],
+            "details": "Analyze bundle composition, split code by route or feature, and remove unused dependencies. Monitor impact on load speed.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Setup Service Worker for Offline Functionality",
+            "description": "Implement a service worker to enable offline access and caching of critical resources.",
+            "dependencies": [
+              "14.3"
+            ],
+            "details": "Configure caching strategies for static assets and API responses. Test offline scenarios and update strategies as needed.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 8,
+            "title": "Implement Touch Gesture Controls for Video",
+            "description": "Add touch gesture support (e.g., swipe, tap, pinch) for video playback controls on mobile devices.",
+            "dependencies": [
+              "14.1"
+            ],
+            "details": "Ensure gestures are responsive and do not conflict with other touch interactions. Test for accessibility and discoverability.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 9,
+            "title": "Optimize Memory Usage and Mobile Error Handling",
+            "description": "Monitor and optimize memory usage to stay under 100MB RAM, and implement mobile-specific error handling and retry mechanisms.",
+            "dependencies": [],
+            "details": "Profile memory consumption, optimize resource management, and create user-friendly error messages with retry options for mobile scenarios.",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "title": "Setup Production Deployment and Monitoring",
+        "description": "Configure production deployment pipeline with monitoring, analytics, and error tracking",
+        "details": "Setup production deployment pipeline with CI/CD automation. Configure production database with proper backup and recovery. Implement error tracking and logging system. Setup performance monitoring with real-time alerts. Configure PostHog analytics for user behavior tracking. Implement A/B testing framework for feature optimization. Setup security monitoring and vulnerability scanning. Create production environment health checks. Configure auto-scaling for video streaming load. Setup Korean market-specific CDN optimization.",
+        "testStrategy": "Test deployment pipeline, verify monitoring alerts, validate analytics data collection, and confirm production environment stability and security",
+        "priority": "high",
+        "dependencies": [
+          14
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Configure CI/CD Pipeline for Production Deployment",
+            "description": "Set up a secure, automated CI/CD pipeline for production deployments, following best practices for access control, environment separation, and code review.",
+            "dependencies": [],
+            "details": "Implement pipeline stages for build, test, and deploy. Enforce least-privilege access, require code reviews, and automate tests. Ensure production environment is isolated from other environments.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Set Up Production Database with Backup and Recovery",
+            "description": "Configure the production database with automated backup and disaster recovery mechanisms.",
+            "dependencies": [
+              "15.1"
+            ],
+            "details": "Establish regular backup schedules, test recovery procedures, and ensure backups are securely stored and monitored for integrity.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Integrate Error Tracking and Logging System",
+            "description": "Implement a centralized error tracking and logging solution for the production environment.",
+            "dependencies": [
+              "15.1"
+            ],
+            "details": "Choose and configure tools (e.g., Sentry, ELK stack) to capture, aggregate, and alert on errors and exceptions in real time.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Implement Performance Monitoring with Real-Time Alerts",
+            "description": "Set up performance monitoring tools to track application health and trigger real-time alerts for anomalies.",
+            "dependencies": [
+              "15.1"
+            ],
+            "details": "Configure metrics collection (CPU, memory, response time), set alert thresholds, and integrate with notification channels (Slack, email).",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Configure PostHog Analytics for User Behavior Tracking",
+            "description": "Integrate PostHog analytics to monitor and analyze user interactions and behavior in production.",
+            "dependencies": [
+              "15.1"
+            ],
+            "details": "Set up event tracking, user segmentation, and dashboards to visualize key user metrics and flows.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Implement A/B Testing Framework for Feature Optimization",
+            "description": "Deploy an A/B testing framework to enable controlled feature rollouts and optimization experiments.",
+            "dependencies": [
+              "15.5"
+            ],
+            "details": "Integrate with analytics, define experiment parameters, and ensure statistical significance in test results.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Set Up Security Monitoring and Vulnerability Scanning",
+            "description": "Implement continuous security monitoring and automated vulnerability scanning for the production environment.",
+            "dependencies": [
+              "15.1"
+            ],
+            "details": "Configure tools for intrusion detection, log analysis, and regular scans of application and infrastructure components.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 8,
+            "title": "Create Production Environment Health Checks",
+            "description": "Develop and configure automated health checks to continuously verify the availability and integrity of production services.",
+            "dependencies": [
+              "15.1"
+            ],
+            "details": "Implement endpoint checks, database connectivity tests, and service dependency verifications with automated alerting on failures.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 9,
+            "title": "Configure Auto-Scaling for Video Streaming Load",
+            "description": "Set up auto-scaling policies and infrastructure to handle variable video streaming demand in production.",
+            "dependencies": [
+              "15.1",
+              "15.8"
+            ],
+            "details": "Define scaling triggers based on CPU, memory, and network usage. Test scaling under simulated load conditions.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 10,
+            "title": "Optimize CDN for Korean Market",
+            "description": "Configure and optimize a Content Delivery Network (CDN) specifically for low-latency delivery to Korean users.",
+            "dependencies": [
+              "15.1",
+              "15.9"
+            ],
+            "details": "Select CDN providers with strong Korean presence, configure edge caching, and test content delivery performance from Korean locations.",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-09-21T06:13:02.953Z",
+      "updated": "2025-09-21T07:33:18.056Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

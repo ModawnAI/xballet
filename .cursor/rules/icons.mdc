@@ -1,0 +1,114 @@
+---
+description: Use Lucide React icons instead of emojis throughout the XBallet app
+globs: src/**/*.{ts,tsx,js,jsx}
+alwaysApply: true
+---
+
+# Icon Usage Guidelines
+
+## **Always Use Lucide React Icons**
+
+- **DO:** Import and use Lucide React icons for all visual elements
+- **DON'T:** Use emojis, Unicode symbols, or other icon libraries
+
+## **Icon Import Pattern**
+
+```typescript
+// ✅ DO: Import specific icons from lucide-react
+import { Target, Music, Mic, Play, Pause, Settings } from "lucide-react";
+
+// ❌ DON'T: Use emojis or Unicode symbols
+<span>🎯</span>
+<span>🎵</span>
+<span>🗣️</span>
+```
+
+## **Icon Usage Examples**
+
+```typescript
+// ✅ DO: Use Lucide icons with proper sizing and styling
+<div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+  <Target className="w-4 h-4 text-primary" />
+</div>
+
+// ✅ DO: Use icons in buttons and interactive elements
+<Button>
+  <Play className="w-4 h-4 mr-2" />
+  클래스 시작
+</Button>
+
+// ❌ DON'T: Use emojis in UI components
+<div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+  <span className="text-primary text-sm">🎯</span>
+</div>
+```
+
+## **Common Icon Mappings**
+
+| Purpose | Lucide Icon | Usage |
+|---------|-------------|-------|
+| Target/Goal | `Target` | Personalization, goals |
+| Music/Audio | `Music` | Music synchronization |
+| Voice/Speech | `Mic` | AI voice coaching |
+| Play | `Play` | Start class, play video |
+| Pause | `Pause` | Pause class, pause video |
+| Settings | `Settings` | User preferences |
+| User/Profile | `User` | User account |
+| Heart/Like | `Heart` | Favorites, likes |
+| Star/Rating | `Star` | Ratings, favorites |
+| Search | `Search` | Search functionality |
+| Menu | `Menu` | Navigation menu |
+| Home | `Home` | Home page |
+| Calendar | `Calendar` | Schedule, dates |
+| Clock | `Clock` | Time, duration |
+
+## **Icon Sizing Guidelines**
+
+```typescript
+// Small icons (16px) - inline with text
+<Settings className="w-4 h-4" />
+
+// Medium icons (20px) - buttons and cards
+<Target className="w-5 h-5" />
+
+// Large icons (24px) - prominent features
+<Music className="w-6 h-6" />
+
+// Extra large icons (32px) - hero sections
+<Play className="w-8 h-8" />
+```
+
+## **Icon Styling**
+
+```typescript
+// ✅ DO: Use consistent styling with theme colors
+<Target className="w-4 h-4 text-primary" />
+<Music className="w-4 h-4 text-secondary" />
+<Mic className="w-4 h-4 text-muted-foreground" />
+
+// ✅ DO: Use background circles for icon containers
+<div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+  <Target className="w-4 h-4 text-primary" />
+</div>
+```
+
+## **Accessibility**
+
+```typescript
+// ✅ DO: Add aria-labels for screen readers when needed
+<Button aria-label="클래스 시작">
+  <Play className="w-4 h-4 mr-2" />
+  클래스 시작
+</Button>
+
+// ✅ DO: Use semantic icons that match their purpose
+<Mic className="w-4 h-4" /> // For voice/audio features
+<Target className="w-4 h-4" /> // For goals/targeting
+```
+
+## **Korean UI Context**
+
+- Icons should complement Korean text without overwhelming it
+- Use consistent sizing to maintain visual hierarchy
+- Ensure icons are culturally appropriate for Korean users
+- Maintain sufficient spacing between icons and Korean text
