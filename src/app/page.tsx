@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { KoreanHeading, KoreanBody } from "@/components/korean-text";
@@ -16,25 +17,26 @@ export default function Home() {
   const [isQuickMenuOpen, setIsQuickMenuOpen] = useState(false);
   const [selectedDifficulty, setSelectedDifficulty] = useState("초급");
   const { user } = useAuthStore();
+  const router = useRouter();
 
   const quickActions = [
     {
       id: 'start-class',
-      label: '클래스 시작하기',
+      label: 'AI 클래스 시작',
       icon: Play,
-      onClick: () => console.log('Start class'),
+      onClick: () => router.push('/ai-classes'),
     },
     {
       id: 'technique-guide',
       label: '테크닉 가이드',
       icon: BookOpen,
-      onClick: () => console.log('Technique guide'),
+      onClick: () => router.push('/technique'),
     },
     {
-      id: 'group-class',
-      label: '그룹 클래스',
-      icon: Users,
-      onClick: () => console.log('Group class'),
+      id: 'videos',
+      label: '동작 데이터베이스',
+      icon: BookOpen,
+      onClick: () => router.push('/videos'),
     },
   ];
 
@@ -88,6 +90,9 @@ export default function Home() {
         {/* Class Difficulty Selection */}
         <div className="space-y-4">
           <KoreanHeading level={3} className="text-lg">난이도 선택</KoreanHeading>
+          <KoreanBody size="sm" className="text-muted-foreground">
+            원하는 난이도를 선택하면 AI가 맞춤형 클래스를 생성합니다
+          </KoreanBody>
           <div className="flex space-x-3">
             <MobileDifficultyButton
               level="초급"
@@ -105,6 +110,13 @@ export default function Home() {
               onClick={() => setSelectedDifficulty("고급")}
             />
           </div>
+          <Button 
+            variant="outline" 
+            className="w-full"
+            onClick={() => router.push('/ai-classes')}
+          >
+            {selectedDifficulty} 클래스 시작하기
+          </Button>
         </div>
 
         {/* Features */}
@@ -115,19 +127,19 @@ export default function Home() {
               icon={Target}
               title="개인 맞춤형 클래스"
               description="AI가 당신만의 클래스를 생성"
-              onClick={() => console.log('Personalized classes')}
+              onClick={() => router.push('/ai-classes')}
             />
             <MobileFeatureCard
               icon={Music}
               title="음악 동기화"
               description="동작과 완벽하게 맞는 음악"
-              onClick={() => console.log('Music sync')}
+              onClick={() => router.push('/ai-classes')}
             />
             <MobileFeatureCard
               icon={Mic}
               title="AI 음성 코칭"
               description="실시간 한국어 안내"
-              onClick={() => console.log('AI coaching')}
+              onClick={() => router.push('/ai-classes')}
             />
                 </div>
               </div>
@@ -139,6 +151,7 @@ export default function Home() {
               <Button 
                 className="w-full h-14 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 active:scale-[0.98]"
                 size="lg"
+                onClick={() => router.push('/ai-classes')}
               >
                 무료 체험 시작하기
               </Button>

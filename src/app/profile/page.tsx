@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { KoreanHeading, KoreanBody, KoreanLabel } from "@/components/korean-text";
 import { MobileNavigation, MobileHeader } from "@/components/mobile-navigation";
 import { useAuthStore, User as UserType } from "@/store/auth-store";
+import { useSubscriptionStore } from "@/store/subscription-store";
 
 // Extended user type for demo purposes
 interface ExtendedUser extends UserType {
@@ -33,13 +34,22 @@ import {
   Bell,
   LogOut,
   Edit3,
-  Star
+  Star,
+  CreditCard,
+  Check,
+  X
 } from "lucide-react";
 
 export default function ProfilePage() {
   const { user, logout } = useAuthStore();
+  const { currentSubscription, availablePlans, loadPlans } = useSubscriptionStore();
   const router = useRouter();
-  const [activeSection, setActiveSection] = useState<'overview' | 'progress' | 'settings' | 'achievements'>('overview');
+  const [activeSection, setActiveSection] = useState<'overview' | 'progress' | 'settings' | 'achievements' | 'pricing'>('overview');
+
+  // Load subscription plans on component mount
+  useEffect(() => {
+    loadPlans();
+  }, [loadPlans]);
 
   // Founder profile - 전호진 (XBallet 창립자)
   const founderProfile = {
@@ -201,11 +211,12 @@ export default function ProfilePage() {
             { id: 'overview', label: '개요', icon: User },
             { id: 'settings', label: '설정', icon: Settings },
             { id: 'achievements', label: '성과', icon: Trophy },
+            { id: 'pricing', label: '요금제', icon: CreditCard },
           ].map((section) => (
             <button
               key={section.id}
-              onClick={() => setActiveSection(section.id as 'overview' | 'progress' | 'achievements' | 'settings')}
-              className={`flex-1 flex items-center justify-center space-x-2 py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+              onClick={() => setActiveSection(section.id as 'overview' | 'progress' | 'achievements' | 'settings' | 'pricing')}
+              className={`flex-1 flex items-center justify-center space-x-2 py-2 px-3 rounded-md text-sm font-medium transition-colors ${
                 activeSection === section.id
                   ? 'bg-background text-foreground shadow-sm'
                   : 'text-muted-foreground hover:text-foreground'
@@ -430,6 +441,200 @@ export default function ProfilePage() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        )}
+
+        {/* Pricing Section */}
+        {activeSection === 'pricing' && (
+          <div className="space-y-4">
+            {/* Current Subscription */}
+            {currentSubscription && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center space-x-2">
+                    <Crown className="w-5 h-5" />
+                    <KoreanHeading level={4}>현재 구독</KoreanHeading>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between p-3 bg-primary/5 rounded-lg">
+                      <div>
+                        <KoreanHeading level={5} className="text-lg">
+                          {availablePlans.find(plan => plan.id === currentSubscription.planId)?.nameKorean || '알 수 없는 플랜'}
+                        </KoreanHeading>
+                        <KoreanBody size="sm" className="text-muted-foreground">
+                          상태: {currentSubscription.status === 'active' ? '활성' : currentSubscription.status === 'trial' ? '체험' : '비활성'}
+                        </KoreanBody>
+                      </div>
+                      <Badge variant={currentSubscription.status === 'active' ? 'default' : 'secondary'}>
+                        {currentSubscription.status === 'active' ? '활성' : currentSubscription.status === 'trial' ? '체험' : '비활성'}
+                      </Badge>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3 text-sm">
+                      <div>
+                        <KoreanBody size="sm" className="text-muted-foreground">시작일</KoreanBody>
+                        <KoreanBody size="sm">{formatDate(currentSubscription.startDate)}</KoreanBody>
+                      </div>
+                      <div>
+                        <KoreanBody size="sm" className="text-muted-foreground">만료일</KoreanBody>
+                        <KoreanBody size="sm">{formatDate(currentSubscription.endDate)}</KoreanBody>
+                      </div>
+                    </div>
+                    {currentSubscription.trialDaysRemaining && (
+                      <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                        <KoreanBody size="sm" className="text-yellow-800">
+                          체험 기간: {currentSubscription.trialDaysRemaining}일 남음
+                        </KoreanBody>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Available Plans */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
+                  <CreditCard className="w-5 h-5" />
+                  <KoreanHeading level={4}>요금제</KoreanHeading>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {availablePlans.map((plan) => (
+                    <div
+                      key={plan.id}
+                      className={`p-4 rounded-lg border ${
+                        plan.isPopular 
+                          ? 'border-primary bg-primary/5' 
+                          : 'border-border bg-card'
+                      }`}
+                    >
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          <div className="flex items-center space-x-2 mb-1">
+                            <KoreanHeading level={5} className="text-lg">
+                              {plan.nameKorean}
+                            </KoreanHeading>
+                            {plan.isPopular && (
+                              <Badge variant="default" className="bg-primary">
+                                인기
+                              </Badge>
+                            )}
+                            {plan.discount && (
+                              <Badge variant="secondary" className="bg-green-100 text-green-800">
+                                {plan.discount}% 할인
+                              </Badge>
+                            )}
+                          </div>
+                          <KoreanBody size="sm" className="text-muted-foreground mb-2">
+                            {plan.descriptionKorean}
+                          </KoreanBody>
+                        </div>
+                        <div className="text-right">
+                          {plan.price === 0 ? (
+                            <KoreanHeading level={4} className="text-2xl text-primary">
+                              무료
+                            </KoreanHeading>
+                          ) : (
+                            <div>
+                              <KoreanHeading level={4} className="text-2xl text-primary">
+                                ₩{plan.price.toLocaleString()}
+                              </KoreanHeading>
+                              {plan.originalPrice && (
+                                <KoreanBody size="sm" className="text-muted-foreground line-through">
+                                  ₩{plan.originalPrice.toLocaleString()}
+                                </KoreanBody>
+                              )}
+                              <KoreanBody size="sm" className="text-muted-foreground">
+                                /{plan.billingPeriod === 'month' ? '월' : '년'}
+                              </KoreanBody>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-2 mb-4">
+                        {plan.featuresKorean.map((feature, index) => (
+                          <div key={index} className="flex items-center space-x-2">
+                            <Check className="w-4 h-4 text-green-500" />
+                            <KoreanBody size="sm">{feature}</KoreanBody>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="flex space-x-2">
+                        {currentSubscription?.planId === plan.id ? (
+                          <Button variant="outline" className="flex-1" disabled>
+                            현재 플랜
+                          </Button>
+                        ) : (
+                          <>
+                            <Button className="flex-1">
+                              {plan.price === 0 ? '시작하기' : '구독하기'}
+                            </Button>
+                            {plan.id === 'family' && plan.maxUsers && (
+                              <Badge variant="outline" className="px-2 py-1">
+                                최대 {plan.maxUsers}명
+                              </Badge>
+                            )}
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Payment Method */}
+            {currentSubscription && (
+              <Card>
+                <CardHeader>
+                  <CardTitle>
+                    <KoreanHeading level={4}>결제 방법</KoreanHeading>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                      <div className="flex items-center space-x-3">
+                        <CreditCard className="w-5 h-5 text-muted-foreground" />
+                        <div>
+                          <KoreanBody size="sm" className="font-medium">
+                            {currentSubscription.paymentInfo.method === 'card' ? '신용카드' : 
+                             currentSubscription.paymentInfo.method === 'bank-transfer' ? '계좌이체' : '모바일 결제'}
+                          </KoreanBody>
+                          {currentSubscription.paymentInfo.cardNumber && (
+                            <KoreanBody size="sm" className="text-muted-foreground">
+                              •••• •••• •••• {currentSubscription.paymentInfo.cardNumber.slice(-4)}
+                            </KoreanBody>
+                          )}
+                        </div>
+                      </div>
+                      <Button variant="outline" size="sm">
+                        변경
+                      </Button>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <KoreanBody size="sm" className="text-muted-foreground">
+                        자동 갱신
+                      </KoreanBody>
+                      <div className="flex items-center space-x-2">
+                        <KoreanBody size="sm">
+                          {currentSubscription.autoRenew ? '켜짐' : '꺼짐'}
+                        </KoreanBody>
+                        <Button variant="outline" size="sm">
+                          {currentSubscription.autoRenew ? '끄기' : '켜기'}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </div>
         )}
       </main>

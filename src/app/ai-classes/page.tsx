@@ -102,12 +102,166 @@ export default function AIClassesPage() {
       createdAt: "2024-01-12",
       thumbnail: "/class-thumb-4.jpg",
       isFavorite: true
+    },
+    {
+      id: "5",
+      title: "저녁 릴랙싱 클래스",
+      description: "하루의 피로를 풀어주는 10분 저녁 발레 클래스",
+      duration: 10,
+      difficulty: "초급",
+      focusAreas: ["스트레칭", "워밍업"],
+      musicStyle: "발라드",
+      movements: ["플리에", "텐듀", "아라베스크", "데벨롭"],
+      aiGenerated: true,
+      createdAt: "2024-01-11",
+      thumbnail: "/class-thumb-5.jpg",
+      isFavorite: false
+    },
+    {
+      id: "6",
+      title: "포인트 테크닉 클래스",
+      description: "포인트 슈즈를 위한 전문적인 60분 클래스",
+      duration: 60,
+      difficulty: "고급",
+      focusAreas: ["포인트", "바워크", "센터워크"],
+      musicStyle: "클래식",
+      movements: ["포인트 플리에", "포인트 텐듀", "포인트 아다지오", "포인트 피루엣"],
+      aiGenerated: true,
+      createdAt: "2024-01-10",
+      thumbnail: "/class-thumb-6.jpg",
+      isFavorite: true
+    },
+    {
+      id: "7",
+      title: "재즈 발레 퓨전",
+      description: "재즈와 발레를 결합한 현대적인 25분 클래스",
+      duration: 25,
+      difficulty: "중급",
+      focusAreas: ["현대", "센터워크", "점프"],
+      musicStyle: "재즈",
+      movements: ["재즈 플리에", "아이솔레이션", "재즈 턴", "그랜드 제테"],
+      aiGenerated: true,
+      createdAt: "2024-01-09",
+      thumbnail: "/class-thumb-7.jpg",
+      isFavorite: false
+    },
+    {
+      id: "8",
+      title: "빠른 워밍업 클래스",
+      description: "클래스 전 빠른 몸풀기를 위한 5분 클래스",
+      duration: 5,
+      difficulty: "초급",
+      focusAreas: ["워밍업", "바워크"],
+      musicStyle: "팝",
+      movements: ["플리에", "텐듀", "론드드잠브"],
+      aiGenerated: true,
+      createdAt: "2024-01-08",
+      thumbnail: "/class-thumb-8.jpg",
+      isFavorite: true
+    },
+    {
+      id: "9",
+      title: "턴 마스터 클래스",
+      description: "다양한 턴 동작을 집중적으로 연습하는 35분 클래스",
+      duration: 35,
+      difficulty: "중급",
+      focusAreas: ["턴", "센터워크", "밸런스"],
+      musicStyle: "클래식",
+      movements: ["피루엣", "체인네", "푸르테", "아라베스크 턴"],
+      aiGenerated: true,
+      createdAt: "2024-01-07",
+      thumbnail: "/class-thumb-9.jpg",
+      isFavorite: false
+    },
+    {
+      id: "10",
+      title: "아다지오 집중 클래스",
+      description: "아다지오 동작의 완성도를 높이는 40분 클래스",
+      duration: 40,
+      difficulty: "고급",
+      focusAreas: ["아다지오", "센터워크", "밸런스"],
+      musicStyle: "클래식",
+      movements: ["아다지오", "아라베스크", "데벨롭", "그랜드 바트망"],
+      aiGenerated: true,
+      createdAt: "2024-01-06",
+      thumbnail: "/class-thumb-10.jpg",
+      isFavorite: true
+    },
+    {
+      id: "11",
+      title: "초보자 첫 발레 클래스",
+      description: "발레를 처음 시작하는 분들을 위한 20분 기초 클래스",
+      duration: 20,
+      difficulty: "초급",
+      focusAreas: ["기초", "바워크", "워밍업"],
+      musicStyle: "클래식",
+      movements: ["기본 자세", "플리에", "텐듀", "데가제"],
+      aiGenerated: true,
+      createdAt: "2024-01-05",
+      thumbnail: "/class-thumb-11.jpg",
+      isFavorite: false
+    },
+    {
+      id: "12",
+      title: "알레그로 스피드 클래스",
+      description: "빠른 템포의 알레그로 동작을 연습하는 30분 클래스",
+      duration: 30,
+      difficulty: "중급",
+      focusAreas: ["알레그로", "점프", "스피드"],
+      musicStyle: "팝",
+      movements: ["소테", "아쉬레", "그랜드 제테", "카브리올"],
+      aiGenerated: true,
+      createdAt: "2024-01-04",
+      thumbnail: "/class-thumb-12.jpg",
+      isFavorite: true
+    },
+    {
+      id: "13",
+      title: "밸런스 강화 클래스",
+      description: "발레의 핵심인 밸런스를 집중적으로 연습하는 25분 클래스",
+      duration: 25,
+      difficulty: "중급",
+      focusAreas: ["밸런스", "센터워크", "아다지오"],
+      musicStyle: "현대",
+      movements: ["아라베스크", "아티튜드", "데벨롭", "그랜드 바트망"],
+      aiGenerated: true,
+      createdAt: "2024-01-03",
+      thumbnail: "/class-thumb-13.jpg",
+      isFavorite: false
+    },
+    {
+      id: "14",
+      title: "전문가 레벨 클래스",
+      description: "전문 무용수를 위한 고난도 60분 마스터 클래스",
+      duration: 60,
+      difficulty: "고급",
+      focusAreas: ["종합", "테크닉", "아티스틱"],
+      musicStyle: "클래식",
+      movements: ["그랜드 알레그로", "피루엣 콤비네이션", "그랜드 제테", "아다지오"],
+      aiGenerated: true,
+      createdAt: "2024-01-02",
+      thumbnail: "/class-thumb-14.jpg",
+      isFavorite: true
+    },
+    {
+      id: "15",
+      title: "스트레칭 & 유연성",
+      description: "발레에 필요한 유연성을 기르는 20분 클래스",
+      duration: 20,
+      difficulty: "초급",
+      focusAreas: ["유연성", "스트레칭", "워밍업"],
+      musicStyle: "발라드",
+      movements: ["플리에", "데벨롭", "그랜드 바트망", "아라베스크"],
+      aiGenerated: true,
+      createdAt: "2024-01-01",
+      thumbnail: "/class-thumb-15.jpg",
+      isFavorite: false
     }
   ];
 
   const durations = [5, 10, 15, 20, 30, 45, 60];
   const difficulties = ["초급", "중급", "고급"];
-  const focusAreas = ["바워크", "센터워크", "점프", "턴", "유연성", "스트레칭"];
+  const focusAreas = ["바워크", "센터워크", "점프", "턴", "유연성", "스트레칭", "기초", "포인트", "현대", "밸런스", "아다지오", "알레그로", "워밍업", "종합", "테크닉", "아티스틱"];
   const musicStyles = ["클래식", "현대", "팝", "재즈", "발라드"];
   const intensities = ["부드러운", "보통", "강한"];
 
@@ -146,11 +300,8 @@ export default function AIClassesPage() {
     );
   };
 
-  const filteredClasses = aiClasses.filter(cls => 
-    cls.duration === selectedDuration &&
-    cls.difficulty === selectedDifficulty &&
-    cls.focusAreas.includes(selectedFocus)
-  );
+  // Show all generated classes by default
+  const filteredClasses = aiClasses;
 
   return (
     <div className="min-h-screen bg-background">
